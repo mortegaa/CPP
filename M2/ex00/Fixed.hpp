@@ -16,13 +16,12 @@
 class	Fixed {
 
 	private:
-		int	_value;
-		static const _fBits = 8;
+		int			_value;
+		static const int	_fBits = 8;
 
 	public:
 		Fixed();
 		Fixed(Fixed & F);
-		// incluir el overload =
 		Fixed & operator =(Fixed & f);
 		~Fixed();
 		int	getRawBits(void) const;
