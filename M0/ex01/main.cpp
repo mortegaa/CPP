@@ -6,12 +6,12 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 17:41:54 by mortega-          #+#    #+#             */
-/*   Updated: 2022/01/20 15:22:08 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/26 04:21:59 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "PhoneBook.hpp"
+#include "./includes/PhoneBook.hpp"
 
 int	main(void)
 {
@@ -22,6 +22,7 @@ int	main(void)
 	{
 		std::cout << "cmd: ";
 		std::cin >> command;
+		std::cin.clear();
 		if (command == "ADD")
 			Ph.addContact();
 		else if (command == "SEARCH")

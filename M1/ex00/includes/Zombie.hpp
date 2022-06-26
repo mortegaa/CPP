@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 23:20:56 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/18 23:21:57 by mortega-         ###   ########.fr       */
+/*   Created: 2022/04/18 22:47:49 by mortega-          #+#    #+#             */
+/*   Updated: 2022/06/18 23:46:22 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void	randomChump(std::string name)
-{
-	Z1 = newZombie(name);
-	Z1.announce();
-}
+# include <string>
+
+class	Zombie {
+
+	private:
+		string	_name;
+	public:
+		Zombie();
+		~Zomie();
+		void	announce();	
+		void	radomChump(std::string name);
+		Zombie	*newZombie(std::string name);
+};
+#endif

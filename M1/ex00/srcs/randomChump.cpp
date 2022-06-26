@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/18 23:22:53 by mortega-         ###   ########.fr       */
+/*   Created: 2022/04/18 23:20:56 by mortega-          #+#    #+#             */
+/*   Updated: 2022/06/18 23:46:31 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	Zombie::announce()
+void	randomChump(std::string name)
 {
-	std::cout << "<" + _name + "> BraiiiiiiizzzZ..." << std::endl;
-}
-
-Zombie::Zombie(void)
-{
-	_name = "Zomby";
-}
-
-Zommbie::~Zomie(void)
-{
-	std::cout << "Zombie killed" << std::endl;
+	Z1 = newZombie(name);
+	Z1.announce();
 }

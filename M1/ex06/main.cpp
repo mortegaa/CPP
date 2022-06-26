@@ -6,27 +6,62 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:53:25 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/23 18:16:03 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/18 23:33:08 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 #include <iostream>
+#include <string>
 
-int	main(void)
+enum {debug, info, warning, error};
+
+static int	choose(char *str)
 {
-	Karen K;
+	if (!strcmp(str, "DEBUG"))
+		return (debug);
+	else if (!strcmp(str, "INFO"))
+		return (info);
+	else if (!strcmp(str, "WARNING"))
+		return (warning);
+	else if (!strcmp(str, "ERROR"))
+		return (error);
+	else
+		return (100);
+}
 
-	std::cout << "Queremos que Karen se queje, asi que pruebas: " << std::endl;
+int	main(int argc, char **argv)
+{
+	Karen	K;
+	int		code;
 
-	std::cout << "Debug: ";
-	K.complain("debug");
-	std::cout << std::endl << "Info: ";
-	K.complain("info");
-
-	std::cout << std::endl << "Warning: ";
-	K.complain("warning");
-
-	std::cout << std::endl << "Error: ";
-	K.complain("error");
+	if (argc < 2)
+	{
+		std::cout << "Introduce any complain" << std::endl;
+		return (1);
+	}
+	code = choose(argv[1]);
+	switch (code)
+	{
+		case debug:
+			std::cout << "[ DEBUG ]" << std::endl;
+			K.complain("debug");
+			break ;
+		case info:
+			std::cout << "[ INFO ]" << std::endl;
+			K.complain("info");
+			break ;
+		case warning:
+			std::cout << "[ WARNING ]" << std::endl;
+			K.complain("warning");
+			break ;
+		case error:
+			std::cout << "[ ERROR ]" << std::endl;
+			K.complain("error");
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break ;
+	}
+	return (0);
 }

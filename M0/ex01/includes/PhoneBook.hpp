@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 17:36:25 by mortega-          #+#    #+#             */
-/*   Updated: 2022/01/18 19:50:28 by mortega-         ###   ########.fr       */
+/*   Created: 2022/01/18 17:23:11 by mortega-          #+#    #+#             */
+/*   Updated: 2022/06/26 10:50:46 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-# include <string>
+# include "Contact.hpp"
 # include <iostream>
+# include <string>
 # include <iomanip>
+# include <thread>
+# include <chrono>
 
-class Contact {
+class PhoneBook {
 
 	public:
-		Contact(void);
-		Contact(std::string, std::string, std::string, std::string, int);
-		std::string	getFirstName();
-		std::string	getLastName();
-		std::string	getNickName();
-	
+		PhoneBook( void );
+		void	addContact( void );
+		void	searchContact( void );
+		int		getIndex( void );
+		void	showBook( void );
+		void	showContact( int index );
 	private:
-		std::string	_firstName;
-		std::string	_lastName;
-		std::string	_nickName;
-		std::string	_darkSecret;
-		int			_phoneNumber;
+		int		_index;
+		static int	_totalIndex;
+		Contact _contacts[8];
 };
 
 #endif
