@@ -1,41 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:39:51 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/19 12:31:41 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:16:26 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "../includes/HumanB.hpp"
 #include <iostream>
 
-HumanA::HumanA(void)
+HumanB::HumanB(void)
 {
 	_name = "Nobody";
-	_weapon = new Weapon("Punches");
+	_armed = false;
 }
 
-HumanA::HumanA(std::string name, Weapon & wep)
+HumanB::HumanB(std::string name)
 {
 	_name = name;
-	_weapon = &wep;
+	_armed = false;
 }
 
-void	HumanA::attack(void)
+void	HumanB::attack(void)
 {
-	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+	if (_armed)
+		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+	else
+		std::cout << _name << " is unarmed " << std::endl;
 }
 
-void	HumanA::setWeapon(Weapon & wep)
+HumanB::~HumanB()
 {
-	_weapon = &wep;
+	std::cout << "HumanB is dead" << std::endl;
 }
 
-HumanA::~HumanA()
+void	HumanB::setWeapon(Weapon *wep)
 {
-	std::cout << "HumanA is dead" << std::endl;
+	_armed = false;
+	_weapon = nullptr;
+	if (wep)
+	{
+		_weapon = wep;
+		_armed = true;
+		std::cout << _name << " has \"" << wep->getType() << "\" as his weapon" << std::endl;
+	}
+	else
+		std::cout << _name << " has no weapon" << std::endl;
 }

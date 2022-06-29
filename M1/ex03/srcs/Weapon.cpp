@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:26:09 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/19 12:02:52 by mortega-         ###   ########.fr       */
+/*   Created: 2022/04/19 11:29:06 by mortega-          #+#    #+#             */
+/*   Updated: 2022/06/29 22:16:47 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "../includes/Weapon.hpp"
+#include <iostream>
 
-# include <string>
+std::string const & Weapon::getType(void)
+{
+	return (_type);
+}
 
-class	Weapon {
+void	Weapon::setType(std::string type)
+{
+	_type = type;
+}
 
-	private:
-		std::string	_type;
-	public:
-		Weapon();
-		Weapon(std::string type);
-		~Weapon();
-		std::string const & getType();
-		void	setType(std::string type);
-};
+Weapon::Weapon()
+{
+	_type = "nothing";
+}
 
-#endif
+Weapon::Weapon(std::string type)
+{
+	_type = type;
+}
+
+Weapon::~Weapon()
+{
+	std::cout << "Weapon \"" << _type  << "\" desapaired" << std::endl;
+}

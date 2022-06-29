@@ -6,33 +6,33 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 12:38:16 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/23 16:52:22 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:43:44 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
+# include <unistd.h>
 
 int	main(int argc, char	**argv)
 {
-	char	line[99];
-	size_t	len = strlen(argv[2]);
-
 	std::string	lineS;
-	std::string file = argv[1];
-	file.append(".replace");
+	std::string file;
+	size_t		len;
 
-	if (argc > 4)
-		return (-1);
+	if (argc < 4) {
+		std::cout << "The arguments are: file, str1, str2" << std::endl; return (1);}
+	if (argc > 4) {
+		std::cout << "Too many arguments (file, str1, str2)" << std::endl; return (1);}
 
+	file = argv[1];
 	std::ifstream	input(argv[1]);
-	std::ofstream	output(file);
+	std::ofstream	output(file.append(".replace"));
 
-	while (input.getline(line, 99))
-	{
-		lineS = line;
-		
+	len = strlen(argv[2]);
+	while (getline(input, lineS))
+	{	
 		while (lineS.find(argv[2]) < lineS.length())
 		{
 			size_t	pointer = lineS.find(argv[2]);

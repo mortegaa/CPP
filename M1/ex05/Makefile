@@ -6,11 +6,11 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/06/20 23:36:06 by mortega-         ###   ########.fr        #
+#    Updated: 2022/06/29 22:50:49 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	megaphone.cpp
+SRCS	=	main.cpp srcs/Karen.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
@@ -19,7 +19,7 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 .cpp.opp:
 			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
-NAME	=	megaphone
+NAME	=	karen
 
 all:		${NAME}
 

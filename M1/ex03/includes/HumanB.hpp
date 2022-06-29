@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:29:06 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/19 12:24:42 by mortega-         ###   ########.fr       */
+/*   Created: 2022/04/19 11:33:26 by mortega-          #+#    #+#             */
+/*   Updated: 2022/06/29 22:09:06 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include <iostream>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-std::string const & Weapon::getType(void)
-{
-	return (_type);
-}
+# include "../includes/Weapon.hpp"
+# include <string>
 
-void	Weapon::setType(std::string type)
-{
-	_type = type;
-}
+class	HumanB {
 
-Weapon::Weapon()
-{
-	_type = "nothing";
-}
+	private:
+		std::string _name;
+		Weapon 		*_weapon;
+		bool		_armed;
+	public:
+		HumanB();
+		HumanB(std::string name);
+		~HumanB();
+		void	attack();
+		void	setWeapon(Weapon *wep);
+};
 
-Weapon::Weapon(std::string type)
-{
-	_type = type;
-}
-
-Weapon::~Weapon()
-{
-	std::cout << "Weapon desapaired" << std::endl;
-}
+#endif

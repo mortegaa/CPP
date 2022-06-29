@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:39:51 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/19 12:33:46 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:17:26 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "../includes/HumanA.hpp"
 #include <iostream>
 
-HumanB::HumanB(void)
+HumanA::HumanA(void)
 {
 	_name = "Nobody";
-	_armed = false;
+	_weapon = new Weapon("Punches");
 }
 
-HumanB::HumanB(std::string name)
+HumanA::HumanA(std::string name, Weapon & wep)
 {
 	_name = name;
-	_armed = false;
+	_weapon = &wep;
+	std::cout << _name << " has \"" << wep.getType() << "\" as his weapon" << std::endl;
 }
 
-void	HumanB::attack(void)
+void	HumanA::attack(void)
 {
-	if (_armed)
-		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
-	else
-		std::cout << _name << " is unarmed " << std::endl;
+	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
 }
 
-HumanB::~HumanB()
-{
-	std::cout << "HumanB is dead" << std::endl;
-}
-
-void	HumanB::setWeapon(Weapon & wep)
+void	HumanA::setWeapon(Weapon & wep)
 {
 	_weapon = &wep;
-	_armed = true;
+	std::cout << _name << " has \"" << wep.getType() << "\" as his weapon" << std::endl;
+}
+
+HumanA::~HumanA()
+{
+	std::cout << "HumanA is dead" << std::endl;
 }

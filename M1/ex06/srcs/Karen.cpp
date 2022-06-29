@@ -6,11 +6,11 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:59:09 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/18 22:31:57 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:46:35 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "../includes/Karen.hpp"
 #include <iostream>
 
 Karen::Karen(){}

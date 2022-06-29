@@ -6,11 +6,11 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/06/21 00:48:46 by mortega-         ###   ########.fr        #
+#    Updated: 2022/06/28 21:59:02 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	Zombie.cpp ZombieHorde.cpp
+SRCS	=	main.cpp srcs/Zombie.cpp srcs/newZombie.cpp srcs/randomChump.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
@@ -19,12 +19,12 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 .cpp.opp:
 			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
-NAME	=	§
+NAME	=	zombie
 
 all:		${NAME}
 
 $(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS} main.cpp
+			@clang++ -Iincludes -o ${NAME} ${OBJS}
 
 clean:
 		@rm -f ${OBJS}

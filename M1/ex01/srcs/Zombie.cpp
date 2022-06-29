@@ -6,18 +6,19 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/19 08:13:56 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/28 22:27:11 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../includes/Zombie.hpp"
+#include <iostream>
 
-void	Zombie::announce()
+void	Zombie::announce( void )
 {
-	std::cout << "<" + _name + "> BraiiiiiiizzzZ..." << std::endl;
+	std::cout << "< " + _name + " > BraiiiiiiizzzZ..." << std::endl;
 }
 
-Zombie::Zombie(void)
+Zombie::Zombie( void )
 {
 	_name = "Zomby";
 }
@@ -27,7 +28,7 @@ Zombie::Zombie(std::string name)
 	_name = name;
 }
 
-Zommbie::~Zomie(void)
+Zombie::~Zombie( void )
 {
-	std::cout << "Zombie killed" << std::endl;
+	std::cout << "Zombie " << _name  << " was killed" << std::endl;
 }

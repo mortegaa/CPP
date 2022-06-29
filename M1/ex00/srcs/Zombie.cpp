@@ -6,15 +6,15 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/18 23:43:49 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/06/28 22:10:40 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "../includes/Zombie.hpp"
 
 void	Zombie::announce()
 {
-	std::cout << "<" + _name + "> BraiiiiiiizzzZ..." << std::endl;
+	std::cout << "< " + _name + " > BraiiiiiiizzzZ..." << std::endl;
 }
 
 Zombie::Zombie(void)
@@ -24,5 +24,5 @@ Zombie::Zombie(void)
 
 Zombie::~Zombie(void)
 {
-	std::cout << "Zombie killed" << std::endl;
+	std::cout << "Zombie " << _name << " was killed" << std::endl;
 }
