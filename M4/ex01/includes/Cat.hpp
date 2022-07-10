@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 01:20:11 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 12:30:59 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main( void ) 
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-	c = b;
+class Cat : public Animal {
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	private:
+		Brain*	_brain;
+
+	public:
+		Cat();
+		Cat(Cat & cat);
+		~Cat();
+		Brain* getBrain( void ) const;
+		void setBrain(Brain *brain);
+		virtual void makeSound( void ) const;
+};
+
+#endif

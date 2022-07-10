@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:47:49 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:30:43 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/02 10:03:55 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/02 14:06:08 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-# include <string>
+# include "Fixed.hpp"
 
-class	Zombie {
+class Point {
 
 	private:
-		std::string	_name;
+		Fixed const _x;
+		Fixed const _y;
 	public:
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-		void	announce();	
-		void	radomChump(std::string name);
-		std::string const & getName( void ) const;
-		void setName(std::string name);
-		Zombie	*newZombie(std::string name);
-		Zombie	*zombieHorde(int N, std::string name);
+		Point();
+		Point(const Point & P);
+		Point(const float f1, const float f2);
+		Point operator=(const Point & P);
+		Point operator-(const Point & P);
+		bool operator==(const Point & P) const;
+		~Point();
+		Fixed getX( void ) const;
+		void setX(const Fixed & f);
+		Fixed getY( void ) const;
+		void setY(const Fixed & f);
 };
 
 #endif

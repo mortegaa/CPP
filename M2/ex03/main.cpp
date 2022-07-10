@@ -6,23 +6,23 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/07/02 13:44:12 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Fixed.hpp"
+#include "includes/Point.hpp"
 #include <iostream>
 
-int main( void ) 
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
+
+int main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	Point a(0, 0);
+	Point b(10, 0);
+	Point c(10, 10);
+	Point p(2, 2);
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	bsp(a, b, c, p);
 	return 0;
 }

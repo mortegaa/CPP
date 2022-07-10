@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 00:33:16 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 22:38:56 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main( void ) 
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+# include <string>
+# include <iostream>
 
-	c = b;
+class Animal {
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	protected:
+		std::string type;
+
+	public:
+		Animal();
+		virtual ~Animal();
+		Animal(std::string type);
+		std::string getType( void ) const;
+		void setType(std::string type);
+		virtual void makeSound( void ) const = 0;
+};
+
+#endif

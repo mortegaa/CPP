@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:47:49 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:30:43 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/10 01:38:27 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/10 16:21:28 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include <string>
+# include "ICharacter.hpp"
 
-class	Zombie {
+# define N 4
+
+class Character : public ICharacter {
 
 	private:
+		AMateria*	_inventory[N];
+		int			_index;
 		std::string	_name;
+		Character();
+
 	public:
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-		void	announce();	
-		void	radomChump(std::string name);
+		Character(std::string name);
+		Character(Character & ch);
+		virtual ~Character();
+		int const & getIndex( void ) const;
+		void setIndex(int index);
 		std::string const & getName( void ) const;
-		void setName(std::string name);
-		Zombie	*newZombie(std::string name);
-		Zombie	*zombieHorde(int N, std::string name);
+		void equip(AMateria* m);
+		void unequip(int fdx);
+		void use(int fdx, ICharacter& target);
+//		AMateria*[]  getInventory()
 };
 
 #endif

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 10:20:56 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 22:23:28 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "../includes/Brain.hpp"
 
-int main( void ) 
+Brain::Brain()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	std::cout << "God just give me a Brain" << std::endl;
+}
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+Brain::~Brain()
+{
+	std::cout << "God just let me vegetal" << std::endl;
 }

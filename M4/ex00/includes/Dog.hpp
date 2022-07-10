@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 00:39:07 by mortega-          #+#    #+#             */
-/*   Updated: 2022/04/24 01:44:43 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 01:20:11 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 10:28:46 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class	Fixed {
+# include "Animal.hpp"
 
-	private:
-		int			_value;
-		static const int	_fBits = 8;
+class Dog : public Animal {
 
 	public:
-		Fixed();
-		Fixed(Fixed & F);
-		Fixed & operator =(Fixed & f);
-		~Fixed();
-		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
+		Dog();
+		Dog(std::string type);
+		~Dog();
+		virtual void makeSound( void ) const;
 };
 
 #endif

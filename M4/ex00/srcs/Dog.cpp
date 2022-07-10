@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 01:24:02 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 10:29:50 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "../includes/Dog.hpp"
 
-int main( void ) 
+Dog::Dog() : Animal() { type = "Dog"; std::cout << "A Dog" << std::endl; }
+
+Dog::~Dog() { std::cout << "Dog says bye bye" << std::endl; }
+
+void Dog::makeSound( void ) const
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	std::cout << "[ Woff Woff. Woff Woff ]" << std::endl;
 }

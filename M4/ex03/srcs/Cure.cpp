@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/10 00:49:27 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/10 15:32:17 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "../includes/Cure.hpp"
 
-int main( void ) 
+Cure::Cure() : AMateria() {
+	_type = "cure";
+}
+
+Cure::~Cure() {}
+
+AMateria* Cure::clone( void ) const
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	return new Cure();
+}
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+void Cure::use(ICharacter & target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

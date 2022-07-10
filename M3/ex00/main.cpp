@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/02 14:09:53 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/02 14:11:42 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "includes/ClapTrap.hpp"
 
-int main( void ) 
+int	main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	ClapTrap p1;
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	p1.attack("morsa");
+	p1.takeDamage(7);
+	p1.beRepaired(3);
+	return (0);
 }

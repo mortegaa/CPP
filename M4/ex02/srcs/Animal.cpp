@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:32:00 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 00:46:48 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 22:39:29 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include "../includes/Animal.hpp"
 #include <iostream>
 
-void	Zombie::announce( void )
+Animal::Animal()
 {
-	std::cout << "< " + _name + " > BraiiiiiiizzzZ..." << std::endl;
+	std::cout << "An animal has arrived" << std::endl;
 }
 
-Zombie::Zombie( void )
+Animal::Animal(std::string type) : type(type)
 {
-	_name = "Zomby";
+	std::cout << "An animal has arrived" << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Animal::~Animal()
 {
-	_name = name;
+	std::cout << "Animal get out" << std::endl;
 }
 
-Zombie::~Zombie( void )
+std::string Animal::getType( void ) const
 {
-	std::cout << "Zombie " << _name  << " was killed" << std::endl;
+	return (this->type);
 }
 
-std::string const & Zombie::getName( void ) const { return _name; }
-
-void Zombie::setName(std::string name) { _name = name; }
+void Animal::setType(std::string type)
+{
+	this->type = type;
+}

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 01:24:02 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 10:29:27 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "../includes/Cat.hpp"
 
-int main( void ) 
+Cat::Cat() : Animal() { type = "Cat"; std::cout << "A Cat" << std::endl; }
+
+Cat::~Cat() { std::cout << "Cat says bye bye" << std::endl; }
+
+void Cat::makeSound( void ) const
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	std::cout << "[ Miauu Miaaaauu. Miaaaaaaaauuuuu ]" << std::endl;
 }

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:47:49 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:30:43 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 23:50:30 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/10 15:26:48 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
+# include "ICharacter.hpp"
 # include <string>
+# include <iostream>
 
-class	Zombie {
+class ICharacter;
 
-	private:
-		std::string	_name;
+class AMateria {
+
+	protected:
+		std::string _type;
+
 	public:
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-		void	announce();	
-		void	radomChump(std::string name);
-		std::string const & getName( void ) const;
-		void setName(std::string name);
-		Zombie	*newZombie(std::string name);
-		Zombie	*zombieHorde(int N, std::string name);
+		AMateria();
+		virtual ~AMateria();
+		AMateria(std::string const & type);
+		std::string const & getType() const; //Returns the materia type
+		void setType(std::string type);
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
 
 #endif

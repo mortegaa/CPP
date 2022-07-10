@@ -5,24 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/09 01:13:47 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/09 22:44:39 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "includes/Animal.hpp"
+#include "includes/Cat.hpp"
+#include "includes/Dog.hpp"
 #include <iostream>
 
-int main( void ) 
+#define N 10
+
+int main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	Animal* _animals[N];
+//	Animal wrongAnimal;
+	size_t	i = 0;
 
-	c = b;
+	while (i < N / 2)
+		_animals[i++] = new Dog();
+	while (i < N)
+		_animals[i++] = new Cat();
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	i = 0;
+	while (i < N)
+		delete _animals[i++];
 }

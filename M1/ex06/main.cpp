@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:53:25 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/29 22:46:48 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/07/10 17:58:14 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 enum {debug, info, warning, error};
 
-static int	choose(char *str)
+static int	choose(std::string str)
 {
-	if (!strcmp(str, "DEBUG"))
+	if (!str.comparestrcmp(str, "DEBUG"))
 		return (debug);
 	else if (!strcmp(str, "INFO"))
 		return (info);
@@ -34,13 +34,15 @@ int	main(int argc, char **argv)
 {
 	Karen	K;
 	int		code;
+	std::string keyCode;
 
 	if (argc < 2)
 	{
 		std::cout << "Introduce any complain" << std::endl;
 		return (1);
 	}
-	code = choose(argv[1]);
+	keyCode = argv[1];
+	code = choose(keyCode);
 	switch (code)
 	{
 		case debug:

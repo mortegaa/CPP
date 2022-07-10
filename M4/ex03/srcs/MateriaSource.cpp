@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/30 21:50:59 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/10 09:39:49 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/10 16:23:11 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#include "../includes/MateriaSource.hpp"
 
-int main( void ) 
+MateriaSource::MateriaSource() {}
+
+MateriaSource::~MateriaSource() {}
+
+void MateriaSource::learnMateria(AMateria* mat)
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	static int index = 0;
+   _grimoire[index++] = mat;
+}
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+	for (size_t i = 0; i < N; i++)
+		if (_grimoire[i]->getType() == type)
+			return _grimoire[i]->clone();
 	return 0;
 }
