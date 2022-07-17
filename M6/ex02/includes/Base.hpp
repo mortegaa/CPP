@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 22:18:28 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/13 20:05:27 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/13 20:27:44 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main( void ) 
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+class Base {
 
-	c = b;
+	public:
+		virtual ~Base() {}
+};
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+#endif

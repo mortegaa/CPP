@@ -5,32 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:54:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 18:29:50 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/13 20:42:47 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/13 20:47:06 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Weapon.hpp"
-#include "includes/HumanA.hpp"
-#include "includes/HumanB.hpp"
+#include "easyfind.hpp"
+#include <vector>
 
-int main()
+int main( void )
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-		jim.setWeapon(nullptr);
-		jim.attack();
-	}
+	std::vector<int> vec;
+	vec.push_back(5);
+	vec.push_back(2);
+	vec.push_back(10);
+	vec.push_back(7);
+
+	int ret = ::easyfind(vec, 0);
+	std::cout << "Return: " << ret << std::endl;
+	return (0);
 }

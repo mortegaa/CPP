@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 22:18:28 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/16 11:45:08 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/16 20:53:59 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
-int main( void ) 
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+# include <stack>
 
-	c = b;
+template <typename T>
+class MutantStack : public std::stack<T> {
+	
+	private:
+		size_t		_begin;
+		size_t		_end;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	public:
+		MutantStack();
+		~MutantStack();
+};
+
+#endif

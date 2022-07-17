@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 22:18:28 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/13 20:35:17 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/16 20:43:24 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
-#include <iostream>
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-int main( void ) 
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+# include <iostream>
 
-	c = b;
+template <typename T>
+int easyfind(T vec, int num){
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	for (size_t i = 0; i < vec.size(); i++)
+		if (vec[i] == num)
+			return (i);
+	std::cout << "Value not found" << std::endl;
+	return (-1);
 }
+
+#endif

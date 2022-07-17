@@ -5,32 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:54:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 18:29:50 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/12 19:20:35 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/12 19:26:10 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Weapon.hpp"
-#include "includes/HumanA.hpp"
-#include "includes/HumanB.hpp"
+#include "whatever.hpp"
+#include <iostream>
 
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-		jim.setWeapon(nullptr);
-		jim.attack();
-	}
+int main( void ) {
+
+	int a = 2;
+	int b = 3;
+
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	return 0;
 }

@@ -5,24 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 01:40:55 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 22:18:28 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/12 19:36:05 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/12 20:23:07 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "iter.hpp"
 #include <iostream>
 
-int main( void ) 
+void wr(char ch) { std::cout << "Char code: " << static_cast<unsigned int>(ch) << std::endl; }
+void s(int num) { 
+	static int sum = 0;
+
+	sum += num;
+	std::cout << "Num: " << static_cast<unsigned int>(num) << "\tSum: " << sum << std::endl; 
+}
+
+int main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	std::cout << "\n*********** CHAR *****************\n" << std::endl;
 
-	c = b;
+	char abc[10] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
+	::iterator(abc, 10, wr);
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	std::cout << "\n*********** INT *****************\n" << std::endl;
+	int a123[10] = {1, 3, 5, 9, 12, 45, 87 , 4, -5};
+	::iterator(a123, 9, s);
+
 }

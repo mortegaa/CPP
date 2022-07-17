@@ -5,32 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:54:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 18:29:50 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/16 02:52:22 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/16 12:00:23 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Weapon.hpp"
-#include "includes/HumanA.hpp"
-#include "includes/HumanB.hpp"
+#include "includes/Span.hpp"
 
-int main()
+int main( void )
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-		jim.setWeapon(nullptr);
-		jim.attack();
-	}
+	Span s = Span(5);
+
+	s.addNumber(5);
+	s.addNumber(3);
+	s.addNumber(17);
+	s.addNumber(9);
+	s.addNumber(11);
+	s.addNumber(250);
+
+	std::cout << s.shortestSpan() << std::endl;
+	std::cout << s.longestSpan() << std::endl;
+
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 01:35:31 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 10:01:41 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/07/16 20:00:07 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ Fixed	Fixed::operator-(const Fixed & f)
 
 Fixed	Fixed::operator*(const Fixed & f)
 {
+	float hola;
 //	std::cout << "Multiply  operator called" << std::endl;
 	_value = ((*this).toFloat() * f.toFloat()) * (1 << _fBits);
 	return (*this);

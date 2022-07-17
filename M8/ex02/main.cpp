@@ -5,32 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:54:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 18:29:50 by mortega-         ###   ########.fr       */
+/*   Created: 2022/07/16 12:39:27 by mortega-          #+#    #+#             */
+/*   Updated: 2022/07/16 13:04:03 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Weapon.hpp"
-#include "includes/HumanA.hpp"
-#include "includes/HumanB.hpp"
+#include "includes/mutantstack.hpp"
+#include <iostream>
 
-int main()
+int main( void )
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-		jim.setWeapon(nullptr);
-		jim.attack();
-	}
+	MutantStack<int> mstack;
+
+	mstack.push(5);
+	mstack.push(17);
+
+	std::cout << mstack.size() << std::endl;
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.top() << std::endl;
+	std::cout << mstack.size() << std::endl;
 }
