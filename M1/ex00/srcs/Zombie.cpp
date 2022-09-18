@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/28 22:10:40 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:30:03 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,14 @@ Zombie::Zombie(void)
 Zombie::~Zombie(void)
 {
 	std::cout << "Zombie " << _name << " was killed" << std::endl;
+}
+
+std::string Zombie::getName( void )
+{
+	return (this->_name);
+}
+
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

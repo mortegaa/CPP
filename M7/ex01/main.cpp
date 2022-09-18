@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:36:05 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/12 20:23:07 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/09/18 13:29:01 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void s(int num) {
 	static int sum = 0;
 
 	sum += num;
-	std::cout << "Num: " << static_cast<unsigned int>(num) << "\tSum: " << sum << std::endl; 
+	std::cout << "Num: " << static_cast<int>(num) << "\tSum: " << sum << std::endl; 
 }
 
 int main( void )

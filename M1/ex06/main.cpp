@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:53:25 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 17:58:14 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:59:13 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,10 @@ enum {debug, info, warning, error};
 
 static int	choose(std::string str)
 {
-	if (!str.comparestrcmp(str, "DEBUG"))
-		return (debug);
-	else if (!strcmp(str, "INFO"))
-		return (info);
-	else if (!strcmp(str, "WARNING"))
-		return (warning);
-	else if (!strcmp(str, "ERROR"))
-		return (error);
-	else
-		return (100);
+	int ret;
+
+	ret = !str.compare("DEBUG") ? debug : !str.compare("INFO") ?  info : !str.compare("WARNING") ? warning : !str.compare("ERROR") ? error : 100;
+	return (ret);
 }
 
 int	main(int argc, char **argv)

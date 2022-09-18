@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/03 22:10:05 by mortega-         ###   ########.fr        #
+#    Updated: 2022/09/18 12:25:16 by test             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	=	main.cpp \
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CFLAGS	=	-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 -pedantic
 
 .cpp.opp:
 			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}

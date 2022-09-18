@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:26:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/08 23:24:19 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/09/18 12:30:55 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap ha sido devuelto a la tierra" << std::endl;
+	std::cout << "ScavTrap <" << getName() << "> ha sido devuelto a la tierra" << std::endl;
 }
 
 void	ScavTrap::attack(std::string const & target)

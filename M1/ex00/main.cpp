@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:45:11 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/28 22:03:57 by mortega-         ###   ########.fr       */
+/*   Updated: 2022/09/18 10:23:35 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int main(void)
 	Z2->announce();
 
 	Zombie *Z3;
-	Z3 = Z1.newZombie("Ramon");
+	Z3 = newZombie("Ramon");
 	Z3->announce();
 
-	Z1.randomChump("Delfin");
+	randomChump("Delfin");
 	delete Z2;
 	delete Z3;
 
