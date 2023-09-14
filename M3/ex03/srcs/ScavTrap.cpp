@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:26:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/09/18 12:30:55 by test             ###   ########.fr       */
+/*   Updated: 2023/03/01 22:16:54 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,26 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	setHP(100); setEP(50); setAD(20);
 }
 
+ScavTrap::ScavTrap(ScavTrap & Sc)
+{
+	this->setName(Sc.getName());
+	this->setHP(Sc.getHP());
+	this->setEP(Sc.getEP());
+	this->setAD(Sc.getAD());
+}
+
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap <" << getName() << "> ha sido devuelto a la tierra" << std::endl;
+	std::cout << "ScavTrap ha sido devuelto a la tierra" << std::endl;
+}
+
+ScavTrap ScavTrap::operator=(ScavTrap & Sc)
+{
+	this->setName(Sc.getName());
+	this->setHP(Sc.getHP());
+	this->setEP(Sc.getEP());
+	this->setAD(Sc.getAD());
+
+	return (*this);
 }
 
 void	ScavTrap::attack(std::string const & target)
@@ -35,6 +53,7 @@ void	ScavTrap::attack(std::string const & target)
 void	ScavTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ScavTrap armor has been trespassed" << std::endl;
+	//std::cout << "Veamos: " << getHP() << "\t" << amount << "\t" << getHP() - amount << std::endl;
 	setHP(getHP() - amount);
 	std::cout << getName() << " has " << getHP() << " left" << std::endl;
 }

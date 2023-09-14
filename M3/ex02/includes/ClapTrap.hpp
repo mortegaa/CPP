@@ -15,7 +15,9 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(ClapTrap & Cl);
 		~ClapTrap();
+		ClapTrap operator=(ClapTrap & Cl);
 		std::string	getName( void );
 		unsigned int getHP( void );
 		unsigned int getEP( void );

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:14:58 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 14:18:23 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 13:24:36 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ class Ice : public AMateria {
 
 	public:
 		Ice();
+		Ice(Ice & i);
 		~Ice();
+		Ice & operator=(Ice & i);
 		void use(ICharacter & target);
 		virtual AMateria* clone( void ) const;
 };

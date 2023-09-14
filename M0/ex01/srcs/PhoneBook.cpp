@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 17:46:08 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/26 11:18:07 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/01/08 00:17:35 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	PhoneBook::showBook( void )
 void	PhoneBook::searchContact( void )
 {
 	int		index;
-	bool	exit =  false;
 
 	showBook();
 	std::cout << std::endl << "Selection Contact: ";

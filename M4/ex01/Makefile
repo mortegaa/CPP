@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/09 10:33:42 by mortega-         ###   ########.fr        #
+#    Updated: 2023/03/25 21:22:40 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,14 @@ SRCS	=	main.cpp \
 			srcs/Dog.cpp \
 			srcs/Brain.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
-
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 NAME	=	Animal
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

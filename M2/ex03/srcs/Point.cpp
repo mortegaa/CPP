@@ -6,71 +6,48 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:13:13 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 14:06:06 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:57:57 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Point.hpp"
 
-Point::Point()
-{
-	_x = Fixed();
-	_y = Fixed();
+Point::Point() : _x(0), _y(0) {}
+
+Point::Point(const Point & P) : _x(P._x), _y(P._y) {}
+
+Point::Point(const float f1, const float f2) : _x(f1), _y(f2) {}
+
+Point::~Point(){
+//	std::cout << "Se acabó el punto" << std::endl;
 }
 
-Point::Point(const Point & P)
+
+Point Point::operator=(const Point & P) const
 {
-	_x = P.getX();
-	_y = P.getY();
-}
-
-Point::Point(const float f1, const float f2)
-{
-	_x = Fixed(f1);
-	_y = Fixed(f2);
-}
-
-Point::~Point(){}
-
-Point Point::operator=(const Point & P)
-{
-	_x = P.getX();
-	_y = P.getY();
-
+	(void)P;
 	return (*this);
 }
 
-Point	Point::operator-(const Point & P)
+const Point Point::operator-(const Point & P) const
 {
-	_x = this->getX() - P.getX();
-	_y = this->getY() - P.getY();
-
-	return (*this);
+	Point p(this->getX().toFloat() - P.getX().toFloat(), this->getY().toFloat() - P.getY().toFloat());
+	return p;
 }
 
 bool	Point::operator==(const Point & P) const
 {
-	if (this->getX() == P.getX() && this->getY() == P.getY())
+	if (this->_x == P._x && this->_y == P._y)
 		return (true);
 	return (false);
 }
 
-Fixed	Point::getX( void ) const
+Fixed Point::getX( void ) const
 {
-	return (_x);
+	return (this->_x);
 }
 
-void	Point::setX(const Fixed & f)
+Fixed Point::getY( void ) const
 {
-	_x = f;
-}
-
-Fixed	Point::getY( void ) const
-{
-	return (_y);
-}
-
-void	Point::setY(const Fixed & f)
-{
-	_y = f;
+	return (this->_y);
 }

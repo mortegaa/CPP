@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:20:35 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/12 19:26:10 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:24:45 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main( void ) {
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-	std::string c = "chaine1";
+	//std::string c = "chaine1";
+	std::string c = NULL;
 	std::string d = "chaine2";
 
 	::swap(c, d);

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:45:11 by mortega-          #+#    #+#             */
-/*   Updated: 2022/09/18 10:23:35 by test             ###   ########.fr       */
+/*   Updated: 2023/01/29 11:19:50 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(void)
 	Z3->announce();
 
 	randomChump("Delfin");
+
 	delete Z2;
 	delete Z3;
 

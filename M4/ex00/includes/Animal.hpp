@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:33:16 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 01:53:36 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:13:50 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Animal {
 
 	public:
 		Animal();
+		Animal(Animal & A);
 		~Animal();
+		Animal & operator=(Animal & A);
 		Animal(std::string type);
 		std::string getType( void ) const;
 		void setType(std::string type);

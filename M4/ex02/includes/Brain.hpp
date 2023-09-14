@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:17:07 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 22:22:53 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 12:08:31 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,17 @@
 
 class Brain {
 
+	private:
+		int			index;
+		std::string _ideas[100];
+
 	public:
 		Brain();
+		Brain(Brain & B);
 		~Brain();
-		std::string _ideas[100];
+		Brain & operator=(Brain & B);
+		std::string *getIdeas( void );
+		void think(std::string idea);
 };
 
 #endif

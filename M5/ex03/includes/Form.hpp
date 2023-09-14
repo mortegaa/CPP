@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 17:45:00 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 21:51:37 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/04/29 19:41:17 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form {
 	public:
 		Form();
 		Form(std::string name, bool sing, unsigned int sg, unsigned int eg);
-		~Form();
+		virtual ~Form();
 		std::string const & getName( void ) const;
 		bool const & getSigned( void ) const;
 		unsigned int const & getSignedGrade( void ) const;

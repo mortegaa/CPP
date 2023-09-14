@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 17:22:20 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:10:27 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:04:44 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ int main( void )
 	Form f("Formulario", false, 20, 2);
 	std::cout << f << std::endl;
 	b.signForm(f);
+
+	std::cout << std::endl;
+
+	b.setGrade(20);
+	std::cout << f << std::endl;
+	b.signForm(f);
+
 }

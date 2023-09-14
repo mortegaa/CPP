@@ -6,25 +6,20 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/09/18 12:24:42 by test             ###   ########.fr        #
+#    Updated: 2023/03/26 14:07:09 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp srcs/ClapTrap.cpp srcs/ScavTrap.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
-
-NAME	=	ClapTrap
+NAME	=	ScavTrap
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 12:38:16 by mortega-          #+#    #+#             */
-/*   Updated: 2022/06/29 22:43:44 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:31:55 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	main(int argc, char	**argv)
 
 	file = argv[1];
 	std::ifstream	input(argv[1]);
+	if (!input.is_open())
+	{
+		std::cout << "Not valid file" << std::endl;
+	}
 	std::ofstream	output(file.append(".replace"));
 
 	len = strlen(argv[2]);
@@ -43,5 +47,7 @@ int	main(int argc, char	**argv)
 		}
 		output << lineS << std::endl;
 	}
+	output.close();
+	input.close();
 	return (0);
 }

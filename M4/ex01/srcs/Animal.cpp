@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:46:48 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 01:56:34 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 11:26:43 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ Animal::Animal()
 	std::cout << "An animal has arrived" << std::endl;
 }
 
+Animal::Animal(Animal & A)
+{
+	(void)A;
+	std::cout << "An animal has a futago" << std::endl;
+}
+
 Animal::Animal(std::string type) : type(type)
 {
 	std::cout << "An animal has arrived" << std::endl;
@@ -26,6 +32,13 @@ Animal::Animal(std::string type) : type(type)
 Animal::~Animal()
 {
 	std::cout << "Animal get out" << std::endl;
+}
+
+Animal & Animal::operator=(Animal & A)
+{
+	(void)A;
+	std::cout << "An animal has a futago" << std::endl;
+	return (A);
 }
 
 std::string Animal::getType( void ) const

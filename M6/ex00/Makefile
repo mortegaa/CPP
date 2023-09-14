@@ -6,25 +6,21 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/13 15:21:40 by mortega-         ###   ########.fr        #
+#    Updated: 2023/07/07 22:02:51 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			srcs/ScalarConverter.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
-
-NAME	=	bureau
+NAME	=	numbers
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

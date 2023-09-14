@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:13:52 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/03 21:55:20 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:52:00 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ class FlagTrap : public virtual ClapTrap {
 
 	public:
 		FlagTrap();
+		FlagTrap(FlagTrap & Fl);
 		FlagTrap(std::string name);
 		~FlagTrap();
+		FlagTrap operator=(FlagTrap & Fl);
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

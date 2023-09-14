@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:03:16 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:11:29 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:01:42 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Form::Form(std::string name, bool sign, unsigned int sg, unsigned int eg) : _nam
 																		   	_signed_grade(sg), 
 																			_executed_grade(eg) {}
 
+Form::Form(Form & form) :	_name(form.getName()),
+							_signed(form.getSigned()),
+							_signed_grade(form.getSignedGrade()),
+							_executed_grade(form.getExecutedGrade()) {}
 
 Form::~Form() {}
 
@@ -42,6 +46,12 @@ bool Form::beSigned(Bureaucrat & b)
 
 const char* Form::GradeTooHighException::what() const throw() { return ("Grade Too High"); }
 const char* Form::GradeTooLowException::what() const throw() { return ("Grade Too Low"); }
+
+Form & Form::operator=(Form & form)
+{
+	this->_signed = form.getSigned();
+	return (*this);
+}
 
 std::ostream & operator<<(std::ostream & os, Form const & obj)
 {

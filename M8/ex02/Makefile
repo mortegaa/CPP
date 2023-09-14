@@ -6,18 +6,18 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/16 13:11:25 by mortega-         ###   ########.fr        #
+#    Updated: 2023/09/11 19:03:59 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp srcs/mutantstack.cpp
+SRCS	=	main.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+			@clang++ ${CXXFLAGS} -c $< -o ${<:.cpp=.o}
 
 NAME	=	Stack
 

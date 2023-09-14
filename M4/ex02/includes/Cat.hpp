@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 01:20:11 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 12:30:59 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 11:18:45 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Cat : public Animal {
 		Cat();
 		Cat(Cat & cat);
 		~Cat();
+		Cat & operator=(Cat & C);
 		Brain* getBrain( void ) const;
 		void setBrain(Brain *brain);
 		virtual void makeSound( void ) const;

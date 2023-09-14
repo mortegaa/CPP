@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 09:39:49 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 16:23:11 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 13:26:34 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 MateriaSource::MateriaSource() {}
 
+MateriaSource::MateriaSource(MateriaSource & MS) { (void)MS; }
+
 MateriaSource::~MateriaSource() {}
+
+MateriaSource & MateriaSource::operator=(MateriaSource & MS) { (void)MS; return (*this); }
 
 void MateriaSource::learnMateria(AMateria* mat)
 {

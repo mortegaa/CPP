@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/06/20 23:36:06 by mortega-         ###   ########.fr        #
+#    Updated: 2023/01/07 13:43:24 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ SRCS	=	megaphone.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+			@clang++ ${CXXFLAGS} -c $< -o ${<:.cpp=.o}
 
 NAME	=	megaphone
 

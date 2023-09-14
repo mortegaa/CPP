@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:06:11 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 11:30:12 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:45:40 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ unsigned int Span::shortestSpan( void )
 	try { if (_index == 0 || _index == 1) throw(NoNumberException());
 		else {
 			
-			int span;
+			int span = INT_MAX;
 			for (size_t i = 0; i < _index; i++)
 			{
 				for (size_t j = 0; j < _index; j++)
 				{
 					if (i != j)
 					{
-						unsigned int temp = std::abs(_store[i] - _store[j]);
+						int temp = std::abs(_store[i] - _store[j]);
 						span = temp < span ? temp : span;
 					}
 				}
@@ -56,7 +56,7 @@ unsigned int Span::longestSpan( void )
 	try { if (_index == 0 || _index == 1) throw(NoNumberException());
 		else {
 			
-			int span;
+			int span = 0;
 			for (size_t i = 0; i < _index; i++)
 			{
 				for (size_t j = 0; j < _index; j++)

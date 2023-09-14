@@ -6,6 +6,7 @@
 # include <string>
 
 class ClapTrap {
+
 	private:
 		std::string	_name;
 		unsigned int	_HP;
@@ -14,6 +15,8 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(ClapTrap & Cl);
+		ClapTrap operator=(ClapTrap & Cl);
 		~ClapTrap();
 		void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);

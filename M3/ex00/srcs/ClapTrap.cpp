@@ -6,18 +6,37 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:13:08 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 14:20:05 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:39:28 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){
+ClapTrap::ClapTrap()
+{
 	_name = "NPC";
 	_HP = 10;
 	_EP = 10;
 	_AD = 0;
 	std::cout << "ClapTrap " << _name << " has born!!" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap & Cl)
+{
+	this->_name = Cl._name;
+	this->_HP = Cl._HP;
+	this->_EP = Cl._EP;
+	this->_AD = Cl._AD;
+}
+
+ClapTrap ClapTrap::operator=(ClapTrap & Cl)
+{
+	this->_name = Cl._name;
+	this->_HP = Cl._HP;
+	this->_EP = Cl._EP;
+	this->_AD = Cl._AD;
+
+	return (*this);
 }
 
 ClapTrap::ClapTrap(std::string name){

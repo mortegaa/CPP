@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:09:53 by mortega-          #+#    #+#             */
-/*   Updated: 2022/09/18 12:28:47 by test             ###   ########.fr       */
+/*   Updated: 2023/03/25 20:00:09 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	main( void )
 //	f.highFiveGuys();
 
 	DiamondTrap d("Boss");
-	d.ScavTrap::attack("Asumin");
+	std::cout << "Stats: " << std::endl << "HP = " << d.getHP() << "\tEP = " << d.getEP() << "\tAD = " << d.getAD() << std::endl;
+	d.attack("Asumin");
 	d.takeDamage(20);
 	d.beRepaired(9);
 	d.guardGate();

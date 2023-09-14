@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:24:04 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/03 16:22:00 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:16:27 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,27 @@ FlagTrap::FlagTrap(std::string name) : ClapTrap(name)
 	std::cout << "Un FlagTrap se levanta" << std::endl;
 }
 
+FlagTrap::FlagTrap(FlagTrap & Fl)
+{
+	this->setName(Fl.getName());
+	this->setHP(Fl.getHP());
+	this->setEP(Fl.getEP());
+	this->setAD(Fl.getAD());
+}
+
 FlagTrap::~FlagTrap()
 {
 	std::cout << "Es el final del FlagTrap" << std::endl;
+}
+
+FlagTrap FlagTrap::operator=(FlagTrap & Fl)
+{
+	this->setName(Fl.getName());
+	this->setHP(Fl.getHP());
+	this->setEP(Fl.getEP());
+	this->setAD(Fl.getAD());
+
+	return (*this);
 }
 
 void	FlagTrap::attack(std::string const & target)

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 01:24:02 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 22:24:35 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 12:11:34 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,18 @@ Dog::Dog(Dog & dog)
 	this->type = dog.type;
 	this->_brain = new Brain();
 	for (size_t i = 0; i < 100; i++)
-		(this->_brain)->_ideas[i] = dog._brain->_ideas[i];
+		(this->_brain)->getIdeas()[i] = dog._brain->getIdeas()[i];
 	std::cout << "Deep Copy" << std::endl;
+}
+
+Dog & Dog::operator=(Dog & dog)
+{
+	this->type = dog.type;
+	this->_brain = new Brain();
+	for (size_t i = 0; i < 100; i++)
+		(this->_brain)->getIdeas()[i] = dog._brain->getIdeas()[i];
+	std::cout << "Operator Deep Copy" << std::endl;
+	return (*this);
 }
 
 Brain* Dog::getBrain( void ) const { return _brain; }

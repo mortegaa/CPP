@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/12 00:43:54 by mortega-         ###   ########.fr        #
+#    Updated: 2023/04/29 19:37:11 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,19 +18,14 @@ SRCS	=	main.cpp \
 			srcs/PresidentialPardonForm.cpp \
 			srcs/Intern.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
-
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 NAME	=	bureau
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

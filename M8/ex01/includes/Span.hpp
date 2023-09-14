@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 20:47:49 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 02:59:34 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:38:47 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <exception>
 # include <cmath>
+# include <limits>
 
 class Span {
 

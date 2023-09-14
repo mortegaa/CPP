@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 17:22:20 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 17:38:58 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:56:18 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ int main( void )
 	std::cout << b << std::endl;
 	b.incrementGrade();
 	std::cout << b << std::endl;
+
+	std::cout << "Failure test: " << std::endl;
+	Bureaucrat f("failure", 252);
+	Bureaucrat f2("failure2", 0);
+	Bureaucrat f3("failure3", -5);
+
 }

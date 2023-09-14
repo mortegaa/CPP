@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 00:39:07 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 13:57:30 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:44:52 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ class	Fixed {
 		Fixed	operator -(const Fixed & f);
 		Fixed	operator *(const Fixed & f);
 		Fixed	operator /(const Fixed & f);
-		Fixed	operator ++( void ); // Pre-Increment
+		Fixed	&operator ++( void ); // Pre-Increment
 		Fixed	operator ++( int ); // Post-Increment
+		Fixed	&operator --( void ); // Pre-Increment
+		Fixed	operator --( int ); // Post-Increment
+
 		~Fixed();
 		int		getRawBits( void ) const;
 		void	setRawBits(int const raw);

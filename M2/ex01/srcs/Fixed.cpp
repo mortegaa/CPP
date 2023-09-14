@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 01:35:31 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 08:50:15 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:00:46 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,8 @@ void	Fixed::setRawBits(int const raw)
 float	Fixed::toFloat( void ) const
 {
 	float	ret;
-	int		decimals;
 
-	decimals = _value & 255;
-	ret = (_value / (1 << _fBits));
-	float m = 1;
-	for (size_t i = 256; i > 1; i = i / 2)
-	{
-		if (decimals & i)
-			ret = ret + (1 / m);
-		m = 2 * m;
-	}
+	ret = (float)_value / (float)(1 << _fBits);
 	return (ret);
 }
 

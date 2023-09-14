@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 22:46:38 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:32:00 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/01/29 11:36:14 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	Zombie::announce( void )
 {
-	std::cout << "< " + _name + " > BraiiiiiiizzzZ..." << std::endl;
+	std::cout << _name + ": BraiiiiiiizzzZ..." << std::endl;
 }
 
 Zombie::Zombie( void )

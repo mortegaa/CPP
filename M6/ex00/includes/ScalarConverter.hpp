@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mutantstack.cpp                                    :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 12:00:48 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/16 20:58:29 by mortega-         ###   ########.fr       */
+/*   Created: 2023/06/03 16:29:34 by mortega-          #+#    #+#             */
+/*   Updated: 2023/07/07 22:31:05 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mutantstack.hpp"
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-template <typename T>
-MutantStack<T>::MutantStack() : std::stack<T>() {}
+# include <iostream>
+# include <iomanip>
+# include <string>
 
-template <typename T>
-MutantStack<T>::~MutantStack() {}
+enum {inf_plus, inf_neg, nan};
+
+class ScalarConverter {
+
+	public:
+		ScalarConverter();
+		static bool is_special(std::string str);
+		static bool is_valid(std::string str);
+		static void convert(std::string str);
+		~ScalarConverter();
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 01:35:31 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/02 13:57:28 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:49:36 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <iostream>
 # include <bitset>
 
-Fixed::Fixed(){
+Fixed::Fixed()
+{
 	_value = 0;
 //	std::cout << "Default constructor called" << std::endl;
 }
@@ -125,7 +126,7 @@ Fixed	Fixed::operator/(const Fixed & f)
 	return (*this);
 }
 
-Fixed	Fixed::operator++( void )	// Pre-Increment
+Fixed	&Fixed::operator++( void )	// Pre-Increment
 {
 //	std::cout << "Pre-Increment operator called" << std::endl;
 	++_value;
@@ -135,8 +136,25 @@ Fixed	Fixed::operator++( void )	// Pre-Increment
 Fixed	Fixed::operator++( int )	// Post-Increment
 {
 //	std::cout << "Post-Increment operator called" << std::endl;
-	_value = _value + 1;
+	Fixed temp = *this;
+	++*this;
+	return (temp);
+}
+
+
+Fixed	&Fixed::operator--( void )	// Pre-Increment
+{
+//	std::cout << "Pre-Increment operator called" << std::endl;
+	++_value;
 	return (*this);
+}
+
+Fixed	Fixed::operator--( int )	// Post-Increment
+{
+//	std::cout << "Post-Increment operator called" << std::endl;
+	Fixed temp = *this;
+	++*this;
+	return (temp);
 }
 
 std::ostream & operator<<(std::ostream &out, const Fixed & F)
@@ -159,17 +177,8 @@ void	Fixed::setRawBits(int const raw)
 float	Fixed::toFloat( void ) const
 {
 	float	ret;
-	int		decimals;
 
-	decimals = _value & 255;
-	ret = (_value / (1 << _fBits));
-	float m = 1;
-	for (size_t i = 256; i >= 1; i = i / 2)
-	{
-		if (decimals & i)
-			ret = ret + (1 / m);
-		m = 2 * m;
-	}
+	ret = (float)_value / (float)(1 << _fBits);
 	return (ret);
 }
 

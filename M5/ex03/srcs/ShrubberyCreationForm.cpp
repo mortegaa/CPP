@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:31:43 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 21:56:04 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:05:19 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,23 @@ bool ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 				if (executor.getGrade() > getExecutedGrade())
 					throw(GradeTooLowException());
 				else {
-						fs << "	my-app/\
-								├─ node_modules/\
-								├─ public/\
-								│  ├─ favicon.ico\
-								│  ├─ index.html\
-								│  ├─ robots.txt\
-								├─ src/\
-								│  ├─ index.css\
-								│  ├─ index.js\
-								├─ .gitignore\
-								├─ package.json\
-								├─ README.md" << std::endl;
+						fs << "	my-app/" << std::endl;
+						fs << "	├─ node_modules/" << std::endl;
+						fs << "	├─ public/" << std::endl;
+						fs << "	│  ├─ favicon.ico" << std::endl;
+						fs << "	│  ├─ index.html" << std::endl;
+						fs << "	│  ├─ robots.txt" << std::endl;
+						fs << "	├─ src/" << std::endl;
+						fs << "	│  ├─ index.css" << std::endl;
+						fs << "	│  ├─ index.js" << std::endl;
+						fs << "	├─ .gitignore" << std::endl;
+						fs << "	├─ package.json" << std::endl;
+						fs << "	├─ README.md" << std::endl;
 						return true;
 					}
 				} catch (GradeTooLowException d) { std::cout << "Unqualified Executor" << std::endl; }
 			} 
-		} catch (FormNoSignedException f) { std::cout << "Form has not been signed" << std::endl; } // borrar el archivo	 
+		} catch (FormNoSignedException f) { std::cout << "Form has not been signed" << std::endl; } 
 
 	fs.close();
 	return false;

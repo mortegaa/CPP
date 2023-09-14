@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/06/30 21:50:31 by mortega-         ###   ########.fr        #
+#    Updated: 2023/02/23 22:07:15 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ SRCS	=	main.cpp srcs/Fixed.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+			@clang++ ${CXXFLAGS} -c $< -o ${<:.cpp=.o}
 
 NAME	=	fixed
 

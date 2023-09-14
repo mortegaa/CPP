@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:33:16 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/09 03:42:03 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:54:52 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class WrongAnimal {
 
 	public:
 		WrongAnimal();
+		WrongAnimal(WrongAnimal & WA);
 		~WrongAnimal();
+		WrongAnimal & operator=(WrongAnimal & WA);
 		WrongAnimal(std::string type);
 		std::string getType( void ) const;
 		void setType(std::string type);

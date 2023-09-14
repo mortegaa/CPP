@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/11 21:19:19 by mortega-         ###   ########.fr        #
+#    Updated: 2023/04/29 18:07:28 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,19 +17,15 @@ SRCS	=	main.cpp \
 			srcs/RobotomyRequestForm.cpp \
 			srcs/PresidentialPardonForm.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
 NAME	=	bureau
 
 all:		${NAME}
 
 $(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/02 12:47:45 by mortega-         ###   ########.fr        #
+#    Updated: 2023/02/23 22:25:25 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ SRCS	=	main.cpp srcs/Fixed.cpp srcs/Point.cpp srcs/bsp.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+			@clang++ ${CXXFLAGS} -c $< -o ${<:.cpp=.o}
 
 NAME	=	bsp
 

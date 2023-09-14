@@ -6,25 +6,20 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/07/12 20:54:04 by mortega-         ###   ########.fr        #
+#    Updated: 2023/09/11 18:11:45 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
-
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 NAME	=	Array
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -DMODE=1 -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

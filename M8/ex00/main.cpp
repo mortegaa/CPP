@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 20:42:47 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/13 20:47:06 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:23:30 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main( void )
 	vec.push_back(10);
 	vec.push_back(7);
 
-	int ret = ::easyfind(vec, 0);
+	int ret = ::easyfind(vec, 1);
 	std::cout << "Return: " << ret << std::endl;
 	return (0);
 }

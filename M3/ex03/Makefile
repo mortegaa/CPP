@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/09/18 12:25:16 by test             ###   ########.fr        #
+#    Updated: 2023/03/26 14:09:35 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,14 @@ SRCS	=	main.cpp \
 			srcs/FlagTrap.cpp \
 			srcs/DiamondTrap.cpp
 
-OBJS	=	${SRCS:.cpp=.o}
-
-CFLAGS	=	-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 -pedantic
-
-.cpp.opp:
-			@clang++ ${CFLAGS} -c $< -o ${<:.cpp=.o}
+CXXFLAGS	=	-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 -pedantic
 
 NAME	=	DiamondTrap
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
-			@clang++ -o ${NAME} ${OBJS}
+$(NAME):
+			@clang++ ${CXXFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 		@rm -f ${OBJS}

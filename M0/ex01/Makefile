@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 12:06:11 by mortega-          #+#    #+#              #
-#    Updated: 2022/06/25 10:42:18 by mortega-         ###   ########.fr        #
+#    Updated: 2023/01/15 09:26:47 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ SRCS	=	srcs/Contact.cpp srcs/PhoneBook.cpp main.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.opp:
-			@clang++ ${CFLAGS} -Iincludes -c $< -o ${<:.cpp=.o}
+			@clang++ ${CXXFLAGS} -Iincludes -c $< -o ${<:.cpp=.o}
 
 NAME	=	phonebook
 

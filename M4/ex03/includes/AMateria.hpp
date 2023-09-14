@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 23:50:30 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 15:26:48 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/03/26 13:00:12 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ class AMateria {
 
 	public:
 		AMateria();
+		AMateria(AMateria & M);
 		virtual ~AMateria();
+		AMateria & operator=(AMateria & M);
 		AMateria(std::string const & type);
 		std::string const & getType() const; //Returns the materia type
 		void setType(std::string type);

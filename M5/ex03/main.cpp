@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 17:22:20 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/12 17:30:53 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:56:58 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int main( void )
 
 	std::cout << *rrf << std::endl;
 	b.signForm(*rrf);
+	std::cout << *rrf << std::endl;
+	b.executeForm(*rrf);
 	std::cout << *rrf << std::endl;
 	b.executeForm(*rrf);
 

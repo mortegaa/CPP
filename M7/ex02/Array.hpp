@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:55:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/12 20:53:15 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:09:12 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,19 @@ template <typename T> class Array
 				_array[i] = array[i];
 			return (*this);
 		}
-		T & operator[](std::size_t index)
+		T & operator[](std::size_t index) const
 		{
 			try {
 				if (index >= _size || index < 0) { throw(IndexOutOfLimitsException()); }
 				else { return _array[index]; }
 			} catch (IndexOutOfLimitsException e)
-			{std::cout << "Array index out of limits, bye bye" << std::endl; exit(0); }
+			{std::cout << "Array index out of limits, bye bye" << std::endl; return _array[0];}
 		}
 		class IndexOutOfLimitsException : public std::exception {
-			virtual const char* what() const throw() { return "Index Out of Limits"; };
+			public:
+				virtual const char* what() const throw() { return "Index Out of Limits"; };
 		};
-		std::size_t size( void ) { return _size; }
+		std::size_t size( void ) const { return _size; }
 };
 
 #endif

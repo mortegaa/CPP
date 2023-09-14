@@ -6,13 +6,14 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:54:19 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/11 18:29:50 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/01/29 12:57:36 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Weapon.hpp"
 #include "includes/HumanA.hpp"
 #include "includes/HumanB.hpp"
+#include <iostream>
 
 int main()
 {
@@ -23,6 +24,7 @@ int main()
 		club.setType("some other type of club");
 		bob.attack();
 	}
+	std::cout << std::endl;
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");

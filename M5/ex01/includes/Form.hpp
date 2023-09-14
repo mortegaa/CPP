@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 17:45:00 by mortega-          #+#    #+#             */
-/*   Updated: 2022/07/10 19:11:33 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:11:56 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Form {
 	public:
 		Form();
 		Form(std::string name, bool sing, unsigned int sg, unsigned int eg);
+		Form(Form & form);
 		~Form();
 		std::string const & getName( void ) const;
 		bool const & getSigned( void ) const;
@@ -42,6 +43,7 @@ class Form {
 			public:
 				virtual const char* what() const throw();
 		};
+		Form & operator=(Form & form);
 };
 
 std::ostream & operator<<(std::ostream & os, Form const & f);

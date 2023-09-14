@@ -8,18 +8,20 @@
 class ClapTrap {
 
 	private:
-		std::string	_name;
+		std::string		_name;
 		unsigned int	_HP;
 		unsigned int	_EP;
 		unsigned int	_AD;
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(ClapTrap & Cl);
 		~ClapTrap();
-		std::string	getName( void );
-		unsigned int getHP( void );
-		unsigned int getEP( void );
-		unsigned int getAD( void );
+		ClapTrap		operator=(ClapTrap & Cl);
+		std::string		getName( void );
+		unsigned int	getHP( void );
+		unsigned int	getEP( void );
+		unsigned int	getAD( void );
 		void	setName(std::string name);
 		void	setHP(unsigned int amount);
 		void	setEP(unsigned int amount);
