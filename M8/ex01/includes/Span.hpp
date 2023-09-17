@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 20:47:49 by mortega-          #+#    #+#             */
-/*   Updated: 2023/09/11 18:38:47 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/16 20:28:21 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ class Span {
 		Span(unsigned int size);
 		~Span();
 		void addNumber(int num);
+
+		template <typename InputIt>
+		void addRange(InputIt begin, InputIt end)
+		{
+			while (begin != end)
+			{
+				addNumber(*begin);
+				begin++;
+			}
+		}
+
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 		class MaxNumberException : public std::exception {

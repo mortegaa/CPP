@@ -6,12 +6,14 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:11:00 by mortega-          #+#    #+#             */
-/*   Updated: 2023/09/14 20:42:44 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/16 11:55:32 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
+
+# include <iostream>
 
 template < typename T >
 void swap(T & a, T & b)

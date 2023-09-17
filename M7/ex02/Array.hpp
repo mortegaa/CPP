@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:55:19 by mortega-          #+#    #+#             */
-/*   Updated: 2023/09/11 18:09:12 by mortega-         ###   ########.fr       */
+/*   Updated: 2023/09/16 12:37:49 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,13 @@ template <typename T> class Array
 		};
 		std::size_t size( void ) const { return _size; }
 };
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os,  const Array<T>& arr)
+{
+	for (size_t i = 0; i < arr.size(); i++)
+		os << "[" << i << "] = " << arr[i] << std::endl;
+	return os;
+}
 
 #endif

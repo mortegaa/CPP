@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -13,10 +13,16 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+
+		std::cout << numbers << std::endl;
     //SCOPE
     {
         Array<int> tmp = numbers;
+		std::cout << tmp << std::endl;
         Array<int> test(tmp);
+		tmp[75] = 0;
+		std::cout << tmp << std::endl;
+		std::cout << test << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
