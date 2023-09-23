@@ -25,9 +25,9 @@
 class PmergeMe {
 
 	private:
-		int					_range;
+		int				_range;
 		bool				_odd;
-		int					_last_item;
+		unsigned int			_last_item;
 
 	public:
 		PmergeMe();
@@ -37,6 +37,10 @@ class PmergeMe {
 		bool checkInput(std::string s1, std::string s2);
 		void setOdd(bool d);
 		void setLastItem(int lst);
+		void setRange(int range);
+		bool getOdd( void );
+		int getLastItem( void );
+		int getRange( void );
 
 	template <typename T, typename S, typename V>
 	void timedSort(T container, S& contA, V& contB, char choice)
@@ -63,10 +67,12 @@ class PmergeMe {
 		typename S::iterator it;
 		for (it = contB.begin(); it != contB.end(); ++it)
 			contA.insert(std::lower_bound(contA.begin(), contA.end(), *it), *it);
+
+		std::cout << "Odd = " << _odd << std::endl;
 		if (_odd)
 			contA.insert(std::lower_bound(contA.begin(), contA.end(), _last_item), _last_item);
 
-		std::cout << std::endl << "After : ";
+		std::cout << std::endl << std::endl << "After : ";
 
 		for (it = contA.begin(); it != contA.end(); ++it)
 			std::cout << *it << " ";

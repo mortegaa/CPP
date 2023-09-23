@@ -21,18 +21,18 @@ int main(int argc, char **argv)
 		std::cout << "Not enough numbers" << std::endl;
 
 	PmergeMe pm;
-	if (argc - 1 % 2 != 0)
-	{
+	pm.setRange(argc - 1);
+	pm.setOdd(false);
+	if ((argc - 1) % 2 != 0)
 		pm.setOdd(true);
-		std::string lastS(argv[argc - 1]);
-		int last = std::stoi(lastS);
-		if (last < 0)
-		{
-			std::cout << "Negative number" << std::endl;
-			return (1);
-		}
-		pm.setLastItem(last);
+	std::string lastS(argv[argc - 1]);
+	int last = std::stoi(lastS);
+	if (last < 0)
+	{
+		std::cout << "Negative number" << std::endl;
+		return (1);
 	}
+	pm.setLastItem(last);
 
 	std::cout << "Before : ";
 	for (int i = 1; i < argc; ++i)

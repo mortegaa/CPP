@@ -16,6 +16,7 @@
 # include <string>
 # include <list>
 # include <iostream>
+# include <climits>
 # include <fstream>
 
 typedef struct s_bitC

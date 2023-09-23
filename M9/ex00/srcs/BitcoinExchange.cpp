@@ -91,7 +91,7 @@ bool BitcoinExchange::validateValue(std::string value)
 		std::cout << "Error: not a positive number" << std::endl;
 		return false;
 	}
-	if (val >= INT_MAX)
+	else if (val >= static_cast<float>(INT_MAX))
 	{
 		std::cout << "Error: too large a number" << std::endl;
 		return false;

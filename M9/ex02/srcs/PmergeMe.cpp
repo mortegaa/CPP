@@ -33,6 +33,14 @@ void PmergeMe::setOdd(bool d) { _odd = d; }
 
 void PmergeMe::setLastItem(int last) { _last_item = last; }
 
+void PmergeMe::setRange(int range) { _range = range; }
+
+bool PmergeMe::getOdd( void ) { return _odd; }
+
+int PmergeMe::getLastItem( void ) { return _last_item; }
+
+int PmergeMe::getRange( void ) { return _range; }
+
 bool PmergeMe::checkInput(std::string s1, std::string s2)
 {
 	if (std::stoi(s1) < 0 || std::stoi(s2) < 0)
